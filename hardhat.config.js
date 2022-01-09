@@ -1,12 +1,12 @@
-require('@nomiclabs/hardhat-waffle');
-require('@symblox/hardhat-abi-gen');  // Generate ABI config from contract
+require("@nomiclabs/hardhat-waffle");
+require("@symblox/hardhat-abi-gen"); // Generate ABI config from contract
 require("@nomiclabs/hardhat-etherscan");
 require("@nomiclabs/hardhat-ganache");
-require('dotenv').config();
+require("dotenv").config();
 
 // Uncomment to deploy
-require('hardhat-deploy');
-require('hardhat-deploy-ethers');
+require("hardhat-deploy");
+require("hardhat-deploy-ethers");
 
 module.exports = {
   defaultNetwork: "hardhat",
@@ -17,10 +17,10 @@ module.exports = {
         enabled: true,
         runs: 200,
         details: {
-          yul: false  // fix for optimizer and inline assembly
-        }
-      }
-    }
+          yul: false, // fix for optimizer and inline assembly
+        },
+      },
+    },
   },
   networks: {
     hardhat: {
@@ -47,14 +47,14 @@ module.exports = {
     apiKey: process.env.etherscan_key,
   },
   namedAccounts: {
-    deployer: '0xf697Fcd632C037E2365563C05eF452d51eF320b7',
-    tokenOwner: '0xf697Fcd632C037E2365563C05eF452d51eF320b7'
+    deployer: "0xf697Fcd632C037E2365563C05eF452d51eF320b7",
+    tokenOwner: "0xf697Fcd632C037E2365563C05eF452d51eF320b7",
   },
   abiExporter: {
-    path: './data/abi',
+    path: "./data/abi",
     clear: true,
     flat: true,
     // only: ['Dungeons', 'CharacterCard', 'dungeonsRender', 'dungeonsSeeder', 'dungeonsGenerator', 'IDungeons', 'IDungeonsGenerator', 'IDungeonsRender', 'IDungeonsSeeder'],
-    spacing: 2
-  }
+    spacing: 2,
+  },
 };
